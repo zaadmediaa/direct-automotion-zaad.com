@@ -1,0 +1,2176 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAAD MEDIA ADS AGENCY | آژانس تبلیغاتی زاد مدیا</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6C2BD9;
+            --primary-dark: #5521B5;
+            --primary-light: #9F7AEA;
+            --accent: #F59E0B;
+            --bronze: #B87333;
+            --silver: #8B8FA3;
+            --gold: #D4A843;
+            --dark: #1A1A2E;
+            --darker: #0F0F1A;
+            --card-bg: rgba(255,255,255,0.03);
+            --glass: rgba(255,255,255,0.06);
+            --text: #E2E8F0;
+            --text-muted: #94A3B8;
+            --gradient-1: linear-gradient(135deg, #6C2BD9 0%, #9F7AEA 50%, #F59E0B 100%);
+            --gradient-2: linear-gradient(135deg, #0F0F1A 0%, #1A1A2E 50%, #2D1B69 100%);
+            --gradient-bronze: linear-gradient(135deg, #B87333, #D4A574);
+            --gradient-silver: linear-gradient(135deg, #6C2BD9, #9F7AEA);
+            --gradient-gold: linear-gradient(135deg, #D4A843, #F5D76E);
+            --shadow-glow: 0 0 40px rgba(108, 43, 217, 0.3);
+            --shadow-card: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: var(--darker);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+
+        /* ===== ANIMATED BACKGROUND ===== */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            animation: floatOrb 20s ease-in-out infinite;
+        }
+
+        .bg-animation .orb:nth-child(1) {
+            width: 600px; height: 600px;
+            background: var(--primary);
+            top: -200px; right: -200px;
+            animation-delay: 0s;
+        }
+
+        .bg-animation .orb:nth-child(2) {
+            width: 500px; height: 500px;
+            background: var(--accent);
+            bottom: -150px; left: -150px;
+            animation-delay: -7s;
+        }
+
+        .bg-animation .orb:nth-child(3) {
+            width: 400px; height: 400px;
+            background: #9F7AEA;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -14s;
+        }
+
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(50px, -80px) scale(1.1); }
+            50% { transform: translate(-30px, 60px) scale(0.9); }
+            75% { transform: translate(70px, 40px) scale(1.05); }
+        }
+
+        /* ===== PARTICLES ===== */
+        .particles {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px; height: 3px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes particleFloat {
+            0% { opacity: 0; transform: translateY(100vh) scale(0); }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { opacity: 0; transform: translateY(-10vh) scale(1); }
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 15px 0;
+        }
+
+        .header.scrolled {
+            background: rgba(15, 15, 26, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(108, 43, 217, 0.2);
+            padding: 10px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-1);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 900;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.2) 50%, transparent 60%);
+            animation: logoShine 3s ease-in-out infinite;
+        }
+
+        @keyframes logoShine {
+            0%, 100% { transform: translateX(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text .en {
+            font-size: 18px;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        .logo-text .fa {
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav a:hover, .nav a.active {
+            color: white;
+            background: var(--glass);
+        }
+
+        .nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 20px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .header-phone:hover { color: var(--primary-light); }
+
+        .header-phone i {
+            color: var(--primary-light);
+            animation: phoneRing 2s ease-in-out infinite;
+        }
+
+        @keyframes phoneRing {
+            0%, 100% { transform: rotate(0); }
+            10% { transform: rotate(15deg); }
+            20% { transform: rotate(-15deg); }
+            30% { transform: rotate(10deg); }
+            40% { transform: rotate(0); }
+        }
+
+        .btn-header {
+            padding: 10px 28px;
+            background: var(--gradient-1);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-header:hover::before { left: 100%; }
+        .btn-header:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(108, 43, 217, 0.4); }
+
+        /* Mobile Menu */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 40px 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 24px;
+            background: var(--glass);
+            border: 1px solid rgba(108, 43, 217, 0.3);
+            border-radius: 50px;
+            font-size: 14px;
+            color: var(--primary-light);
+            margin-bottom: 30px;
+            animation: fadeInDown 0.8s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge .dot {
+            width: 8px; height: 8px;
+            background: #10B981;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 72px);
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 25px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero h1 .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: clamp(16px, 2vw, 20px);
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn-primary {
+            padding: 16px 40px;
+            background: var(--gradient-1);
+            color: white;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(108, 43, 217, 0.4);
+        }
+
+        .btn-secondary {
+            padding: 16px 40px;
+            background: var(--glass);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--primary-light);
+            transform: translateY(-3px);
+        }
+
+        .hero-stats {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 60px;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 900;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        .stat-divider {
+            width: 1px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* ===== SECTION STYLES ===== */
+        .section {
+            padding: 100px 40px;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 20px;
+            background: rgba(108, 43, 217, 0.1);
+            border: 1px solid rgba(108, 43, 217, 0.2);
+            border-radius: 50px;
+            font-size: 13px;
+            color: var(--primary-light);
+            margin-bottom: 20px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(28px, 4vw, 48px);
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 24px;
+            padding: 40px 30px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(108, 43, 217, 0.3);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .service-card:hover::before { opacity: 0.05; }
+
+        .service-icon {
+            width: 70px; height: 70px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-icon.purple { background: rgba(108, 43, 217, 0.15); color: var(--primary-light); }
+        .service-icon.amber { background: rgba(245, 158, 11, 0.15); color: var(--accent); }
+        .service-icon.green { background: rgba(16, 185, 129, 0.15); color: #10B981; }
+        .service-icon.blue { background: rgba(59, 130, 246, 0.15); color: #3B82F6; }
+        .service-icon.pink { background: rgba(236, 72, 153, 0.15); color: #EC4899; }
+        .service-icon.cyan { background: rgba(6, 182, 212, 0.15); color: #06B6D4; }
+
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing-section {
+            background: linear-gradient(180deg, transparent 0%, rgba(108, 43, 217, 0.03) 50%, transparent 100%);
+        }
+
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .pricing-toggle span {
+            font-size: 15px;
+            color: var(--text-muted);
+            transition: color 0.3s;
+        }
+
+        .pricing-toggle span.active { color: white; font-weight: 600; }
+
+        .toggle-switch {
+            width: 56px; height: 30px;
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .toggle-switch.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .toggle-switch .toggle-knob {
+            width: 24px; height: 24px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            right: 3px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .toggle-switch.active .toggle-knob {
+            right: calc(100% - 27px);
+        }
+
+        .save-badge {
+            padding: 4px 12px;
+            background: rgba(16, 185, 129, 0.15);
+            color: #10B981;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .pricing-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            align-items: start;
+        }
+
+        .pricing-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 28px;
+            padding: 40px 35px;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
+        }
+
+        .pricing-card.bronze::before { background: var(--gradient-bronze); }
+        .pricing-card.silver::before { background: var(--gradient-silver); }
+        .pricing-card.gold::before { background: var(--gradient-gold); }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-card);
+        }
+
+        .pricing-card.featured {
+            border-color: rgba(108, 43, 217, 0.4);
+            background: rgba(108, 43, 217, 0.05);
+            transform: scale(1.05);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 6px 18px;
+            background: var(--gradient-1);
+            color: white;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            animation: badgePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes badgePulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(108, 43, 217, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(108, 43, 217, 0); }
+        }
+
+        .plan-icon {
+            width: 60px; height: 60px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .bronze .plan-icon { background: rgba(184, 115, 51, 0.15); color: var(--bronze); }
+        .silver .plan-icon { background: rgba(108, 43, 217, 0.15); color: var(--primary-light); }
+        .gold .plan-icon { background: rgba(212, 168, 67, 0.15); color: var(--gold); }
+
+        .plan-name {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .plan-desc {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .plan-price {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .price-amount {
+            font-size: 42px;
+            font-weight: 900;
+        }
+
+        .bronze .price-amount { color: var(--bronze); }
+        .silver .price-amount { color: var(--primary-light); }
+        .gold .price-amount { color: var(--gold); }
+
+        .price-currency {
+            font-size: 16px;
+            color: var(--text-muted);
+        }
+
+        .price-period {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 35px;
+        }
+
+        .plan-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 15px;
+        }
+
+        .plan-features li:last-child { border-bottom: none; }
+
+        .plan-features li i {
+            width: 24px; height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            flex-shrink: 0;
+        }
+
+        .plan-features li i.fa-check {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10B981;
+        }
+
+        .plan-features li i.fa-xmark {
+            background: rgba(239, 68, 68, 0.15);
+            color: #EF4444;
+        }
+
+        .plan-features li.disabled {
+            color: var(--text-muted);
+            opacity: 0.5;
+        }
+
+        .plan-btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .bronze .plan-btn {
+            background: rgba(184, 115, 51, 0.15);
+            color: var(--bronze);
+            border: 1px solid rgba(184, 115, 51, 0.3);
+        }
+        .bronze .plan-btn:hover {
+            background: var(--bronze);
+            color: white;
+            box-shadow: 0 10px 30px rgba(184, 115, 51, 0.3);
+        }
+
+        .silver .plan-btn {
+            background: var(--gradient-1);
+            color: white;
+        }
+        .silver .plan-btn:hover {
+            box-shadow: 0 10px 30px rgba(108, 43, 217, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .gold .plan-btn {
+            background: rgba(212, 168, 67, 0.15);
+            color: var(--gold);
+            border: 1px solid rgba(212, 168, 67, 0.3);
+        }
+        .gold .plan-btn:hover {
+            background: var(--gold);
+            color: var(--darker);
+            box-shadow: 0 10px 30px rgba(212, 168, 67, 0.3);
+        }
+
+        .plan-extra {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(108, 43, 217, 0.05);
+            border: 1px solid rgba(108, 43, 217, 0.1);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--primary-light);
+        }
+
+        .plan-extra i { color: var(--accent); }
+
+        /* ===== FEATURES COMPARISON ===== */
+        .comparison-section {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead th {
+            padding: 25px 20px;
+            font-size: 16px;
+            font-weight: 700;
+            background: rgba(108, 43, 217, 0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .comparison-table thead th:first-child {
+            text-align: right;
+        }
+
+        .comparison-table tbody td {
+            padding: 18px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 15px;
+        }
+
+        .comparison-table tbody td:first-child {
+            text-align: right;
+            color: var(--text-muted);
+        }
+
+        .comparison-table tbody tr:hover {
+            background: rgba(108, 43, 217, 0.03);
+        }
+
+        .comparison-table .check { color: #10B981; font-size: 18px; }
+        .comparison-table .cross { color: #EF4444; font-size: 18px; }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 24px;
+            padding: 35px;
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(108, 43, 217, 0.2);
+        }
+
+        .testimonial-stars {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            line-height: 1.9;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonial-avatar {
+            width: 48px; height: 48px;
+            border-radius: 14px;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .testimonial-name {
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .testimonial-role {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 18px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(108, 43, 217, 0.2);
+        }
+
+        .faq-item.active {
+            border-color: rgba(108, 43, 217, 0.3);
+            background: rgba(108, 43, 217, 0.03);
+        }
+
+        .faq-question {
+            padding: 22px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover { color: var(--primary-light); }
+
+        .faq-question i {
+            transition: transform 0.3s;
+            color: var(--primary-light);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 28px 22px;
+        }
+
+        .faq-answer p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            padding: 100px 40px;
+        }
+
+        .cta-box {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--gradient-2);
+            border: 1px solid rgba(108, 43, 217, 0.3);
+            border-radius: 32px;
+            padding: 70px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -50%;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(108, 43, 217, 0.15) 0%, transparent 70%);
+        }
+
+        .cta-box::after {
+            content: '';
+            position: absolute;
+            bottom: -50%; left: -50%;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+        }
+
+        .cta-box h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 900;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-box p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-light);
+            direction: ltr;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--dark);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 80px 40px 30px;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.9;
+            margin: 20px 0 25px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 40px; height: 40px;
+            border-radius: 12px;
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-light);
+            padding-right: 5px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-contact-item i {
+            color: var(--primary-light);
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-bottom p {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-bottom-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        .footer-bottom-links a:hover { color: var(--primary-light); }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px; height: 50px;
+            background: var(--gradient-1);
+            border: none;
+            border-radius: 14px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+            z-index: 999;
+            box-shadow: 0 10px 30px rgba(108, 43, 217, 0.3);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* ===== FLOATING CONTACT ===== */
+        .float-contact {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+        }
+
+        .float-btn {
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+        }
+
+        .phone-float {
+            background: #10B981;
+            animation: floatBounce 3s ease-in-out infinite;
+        }
+
+        @keyframes floatBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .pricing-grid { grid-template-columns: 1fr; max-width: 500px; }
+            .pricing-card.featured { transform: none; }
+            .pricing-card.featured:hover { transform: translateY(-10px); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav { 
+                position: fixed;
+                top: 0; right: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                background: var(--dark);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 80px 30px 30px;
+                gap: 5px;
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                border-left: 1px solid rgba(255,255,255,0.1);
+                z-index: 1001;
+            }
+            .nav.mobile-open { right: 0; }
+            .nav a { width: 100%; padding: 15px; border-radius: 12px; }
+            .nav a.active::after { display: none; }
+            .mobile-toggle { display: block; }
+            .nav-close { 
+                position: absolute;
+                top: 20px; left: 20px;
+                background: none; border: none;
+                color: white; font-size: 24px;
+                cursor: pointer;
+            }
+            .header-phone { display: none; }
+            .hero-stats { flex-direction: column; gap: 30px; }
+            .stat-divider { width: 50px; height: 1px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .comparison-table { font-size: 13px; }
+            .comparison-table thead th,
+            .comparison-table tbody td { padding: 12px 10px; }
+        }
+
+        /* ===== MOBILE NAV OVERLAY ===== */
+        .mobile-nav-overlay {
+            display: none;
+        }
+
+        /* ===== COUNTER ANIMATION ===== */
+        .counter { display: inline-block; }
+
+        /* ===== LOADING SCREEN ===== */
+        .loader {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: var(--darker);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-spinner {
+            width: 50px; height: 50px;
+            border: 3px solid rgba(108, 43, 217, 0.2);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .loader-text {
+            font-size: 14px;
+            color: var(--text-muted);
+            letter-spacing: 3px;
+        }
+
+        /* ===== NUMBER TICKER ===== */
+        .price-ticker {
+            display: inline-block;
+            transition: all 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">ZAAD MEDIA</div>
+    </div>
+
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+    </div>
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <div class="logo-icon">Z</div>
+                <div class="logo-text">
+                    <span class="en">ZAAD MEDIA</span>
+                    <span class="fa">ADS AGENCY</span>
+                </div>
+            </a>
+
+            <nav class="nav" id="mainNav">
+                <button class="nav-close" id="navClose" style="display:none"><i class="fas fa-times"></i></button>
+                <a href="#home" class="active">خانه</a>
+                <a href="#services">خدمات</a>
+                <a href="#pricing">تعرفه‌ها</a>
+                <a href="#testimonials">نظرات</a>
+                <a href="#faq">سوالات</a>
+                <a href="#contact">تماس</a>
+            </nav>
+
+            <div class="header-cta">
+                <a href="tel:09991698886" class="header-phone">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>۰۹۹۹۱۶۹۸۸۸۶</span>
+                </a>
+                <a href="#pricing" class="btn-header">شروع کنید</a>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                آژانس تبلیغاتی هوشمند
+            </div>
+            <h1>
+                مدیریت هوشمند
+                <br>
+                <span class="gradient-text">پیج اینستاگرام</span>
+                <br>
+                با اتوماسیون حرفه‌ای
+            </h1>
+            <p>
+                با پلتفرم زاد مدیا، پاسخگویی خودکار، تولید محتوا و مدیریت پیج‌های اینستاگرام را به اتوماسیون هوشمند بسپارید و فروش خود را متحول کنید.
+            </p>
+            <div class="hero-buttons">
+                <a href="#pricing" class="btn-primary">
+                    <i class="fas fa-rocket"></i>
+                    مشاهده پلن‌ها
+                </a>
+                <a href="#services" class="btn-secondary">
+                    <i class="fas fa-play-circle"></i>
+                    آشنایی با خدمات
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number"><span class="counter" data-target="500">0</span>+</div>
+                    <div class="stat-label">مشتری فعال</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number"><span class="counter" data-target="98">0</span>%</div>
+                    <div class="stat-label">رضایت مشتریان</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number"><span class="counter" data-target="24">0</span>/۷</div>
+                    <div class="stat-label">پشتیبانی</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="section-header reveal">
+            <div class="section-tag">
+                <i class="fas fa-star"></i>
+                خدمات ما
+            </div>
+            <h2>خدمات <span class="gradient-text">حرفه‌ای</span> ما</h2>
+            <p>مجموعه‌ای کامل از ابزارهای مدیریت و رشد پیج اینستاگرام</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon purple"><i class="fas fa-robot"></i></div>
+                <h3>اتوماسیون دایرکت</h3>
+                <p>پاسخگویی خودکار و هوشمند به دایرکت‌ها با قابلیت شخصی‌سازی کامل و پاسخ‌های چندمرحله‌ای</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon amber"><i class="fas fa-pen-fancy"></i></div>
+                <h3>تولید محتوا</h3>
+                <p>تولید محتوای متنی و بصری با هوش مصنوعی برای افزایش تعامل و جذب فالوور هدفمند</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon green"><i class="fas fa-chart-line"></i></div>
+                <h3>آنالیز و گزارش‌دهی</h3>
+                <p>گزارش‌های دقیق از عملکرد پیج، نرخ تعامل، رشد فالوور و تحلیل رقبا</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon blue"><i class="fas fa-users-cog"></i></div>
+                <h3>مدیریت تیمی</h3>
+                <p>مدیریت چند پیج همزمان با دسترسی تیمی و تقسیم وظایف بین اعضا</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon pink"><i class="fas fa-bullseye"></i></div>
+                <h3>کمپین تبلیغاتی</h3>
+                <p>طراحی و اجرای کمپین‌های هدفمند برای افزایش فروش و برندینگ</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon cyan"><i class="fas fa-headset"></i></div>
+                <h3>مشاوره تخصصی</h3>
+                <p>مشاوره رایگان و تخصصی برای بهینه‌سازی استراتژی فروش و بازاریابی دیجیتال</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section pricing-section" id="pricing">
+        <div class="section-header reveal">
+            <div class="section-tag">
+                <i class="fas fa-crown"></i>
+                تعرفه‌ها
+            </div>
+            <h2>پلن مناسب خود را <span class="gradient-text">انتخاب کنید</span></h2>
+            <p>سه پلن انعطاف‌پذیر برای هر نوع کسب‌وکاری</p>
+        </div>
+
+        <div class="pricing-toggle reveal">
+            <span class="active" id="monthlyLabel">ماهانه</span>
+            <div class="toggle-switch" id="pricingToggle">
+                <div class="toggle-knob"></div>
+            </div>
+            <span id="yearlyLabel">سالانه</span>
+            <span class="save-badge">۲۰٪ تخفیف</span>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Bronze Plan -->
+            <div class="pricing-card bronze reveal">
+                <div class="plan-icon"><i class="fas fa-certificate"></i></div>
+                <div class="plan-name">اشتراک برنزی</div>
+                <div class="plan-desc">برای یک پیج؛ دیگر هیچ دایرکتی بی‌جواب نمی‌ماند</div>
+                <div class="plan-price">
+                    <span class="price-amount price-ticker" data-monthly="۱,۹۵۰,۰۰۰" data-yearly="۱۸,۷۲۰,۰۰۰">۱,۹۵۰,۰۰۰</span>
+                    <span class="price-currency">تومان</span>
+                </div>
+                <div class="price-period">در ماه <span class="yearly-text" style="display:none">• پرداخت سالانه</span></div>
+
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> ۱۵ اتوماسیون فعال همزمان</li>
+                    <li><i class="fas fa-check"></i> اتصال ۱ پیج اینستاگرام</li>
+                    <li><i class="fas fa-check"></i> ۱ هم‌تیمی برای مدیریت پیج</li>
+                    <li class="disabled"><i class="fas fa-xmark"></i> تولید محتوا</li>
+                    <li class="disabled"><i class="fas fa-xmark"></i> مشاوره تخصصی</li>
+                </ul>
+
+                <a href="#" class="plan-btn">
+                    انتخاب برنزی
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+
+            <!-- Silver Plan (Featured) -->
+            <div class="pricing-card silver featured reveal">
+                <div class="popular-badge">
+                    <i class="fas fa-fire"></i>
+                    پیشنهاد ما برای رشد
+                </div>
+                <div class="plan-icon"><i class="fas fa-gem"></i></div>
+                <div class="plan-name">اشتراک نقره‌ای</div>
+                <div class="plan-desc">برای پیج‌های پرفروش، حتی در شلوغ‌ترین روزهای حراج</div>
+                <div class="plan-price">
+                    <span class="price-amount price-ticker" data-monthly="۲,۹۰۰,۰۰۰" data-yearly="۲۷,۸۴۰,۰۰۰">۲,۹۰۰,۰۰۰</span>
+                    <span class="price-currency">تومان</span>
+                </div>
+                <div class="price-period">در ماه <span class="yearly-text" style="display:none">• پرداخت سالانه</span></div>
+
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> اتوماسیون فعال نامحدود</li>
+                    <li><i class="fas fa-check"></i> اتصال تا ۵ پیج اینستاگرام</li>
+                    <li><i class="fas fa-check"></i> ۳ هم‌تیمی برای مدیریت پیج</li>
+                    <li><i class="fas fa-check"></i> آنالیز و گزارش‌دهی پیشرفته</li>
+                    <li class="disabled"><i class="fas fa-xmark"></i> تولید محتوا با AI</li>
+                </ul>
+
+                <a href="#" class="plan-btn">
+                    انتخاب نقره‌ای
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+
+            <!-- Gold Plan -->
+            <div class="pricing-card gold reveal">
+                <div class="plan-icon"><i class="fas fa-crown"></i></div>
+                <div class="plan-name">اشتراک ترکیبی (طلایی)</div>
+                <div class="plan-desc">پاسخ خودکار و تولید محتوا، در یک اشتراک</div>
+                <div class="plan-price">
+                    <span class="price-amount price-ticker" data-monthly="۳,۸۵۰,۰۰۰" data-yearly="۳۶,۹۶۰,۰۰۰">۳,۸۵۰,۰۰۰</span>
+                    <span class="price-currency">تومان</span>
+                </div>
+                <div class="price-period">در ماه <span class="yearly-text" style="display:none">• پرداخت سالانه</span></div>
+
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> اتوماسیون فعال نامحدود</li>
+                    <li><i class="fas fa-check"></i> اتصال تا ۱۰ پیج اینستاگرام</li>
+                    <li><i class="fas fa-check"></i> ۱ هم‌تیمی برای مدیریت پیج</li>
+                    <li><i class="fas fa-check"></i> تولید محتوا با هوش مصنوعی</li>
+                    <li><i class="fas fa-check"></i> مشاوره و آموزش دایرکت‌کیت</li>
+                </ul>
+
+                <a href="#" class="plan-btn">
+                    مشاهده اشتراک ترکیبی
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+
+                <div class="plan-extra">
+                    <i class="fas fa-gift"></i>
+                    مشاوره و آموزش دایرکت اتوماسیون رایگان
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="section" id="comparison">
+        <div class="section-header reveal">
+            <div class="section-tag">
+                <i class="fas fa-table"></i>
+                مقایسه
+            </div>
+            <h2>مقایسه <span class="gradient-text">تفصیلی</span> پلن‌ها</h2>
+            <p>تمام ویژگی‌ها را در یک نگاه مقایسه کنید</p>
+        </div>
+        <div class="comparison-section reveal">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>ویژگی</th>
+                        <th>🥉 برنزی</th>
+                        <th>🥈 نقره‌ای</th>
+                        <th>🥇 طلایی</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>اتوماسیون فعال همزمان</td>
+                        <td>۱۵</td>
+                        <td>نامحدود</td>
+                        <td>نامحدود</td>
+                    </tr>
+                    <tr>
+                        <td>اتصال پیج اینستاگرام</td>
+                        <td>۱</td>
+                        <td>۵</td>
+                        <td>۱۰</td>
+                    </tr>
+                    <tr>
+                        <td>هم‌تیمی مدیریت پیج</td>
+                        <td>۱</td>
+                        <td>۳</td>
+                        <td>۱۰</td>
+                    </tr>
+                    <tr>
+                        <td>پاسخ خودکار دایرکت</td>
+                        <td><i class="fas fa-check check"></i></td>
+                        <td><i class="fas fa-check check"></i></td>
+                        <td><i class="fas fa-check check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>آنالیز و گزارش‌دهی</td>
+                        <td><i class="fas fa-xmark cross"></i></td>
+                        <td><i class="fas fa-check check"></i></td>
+                        <td><i class="fas fa-check check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>تولید محتوا با AI</td>
+                        <td><i class="fas fa-xmark cross"></i></td>
+                        <td><i class="fas fa-xmark cross"></i></td>
+                        <td><i class="fas fa-check check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>مشاوره تخصصی</td>
+                        <td><i class="fas fa-xmark cross"></i></td>
+                        <td><i class="fas fa-xmark cross"></i></td>
+                        <td><i class="fas fa-check check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>آموزش دایرکت‌کیت</td>
+                        <td><i class="fas fa-xmark cross"></i></td>
+                        <td><i class="fas fa-xmark cross"></i></td>
+                        <td><i class="fas fa-check check"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials">
+        <div class="section-header reveal">
+            <div class="section-tag">
+                <i class="fas fa-heart"></i>
+                نظرات مشتریان
+            </div>
+            <h2>مشتریان ما <span class="gradient-text">چه می‌گویند؟</span></h2>
+            <p>تجربه واقعی کاربران پلتفرم زاد مدیا</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    از وقتی از پلن نقره‌ای استفاده می‌کنم، فروش پیجم ۳ برابر شده. دیگه هیچ دایرکتی بی‌جواب نمی‌مونه و مشتری‌ها راضی‌ترن.
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">س</div>
+                    <div>
+                        <div class="testimonial-name">سارا محمدی</div>
+                        <div class="testimonial-role">فروشگاه آنلاین لباس</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    پلن طلایی واقعاً ارزشش رو داره. تولید محتوا با AI و اتوماسیون دایرکت در کنار هم، کار ما رو خیلی راحت کرده.
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">م</div>
+                    <div>
+                        <div class="testimonial-name">محمد رضایی</div>
+                        <div class="testimonial-role">مدیر دیجیتال مارکتینگ</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testimonial-text">
+                    پشتیبانی عالی و پلتفرم بسیار کاربرپسند. با پلن برنزی شروع کردم و الان به نقره‌ای ارتقا دادم. پیشنهاد می‌کنم.
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">ن</div>
+                    <div>
+                        <div class="testimonial-name">نازنین احمدی</div>
+                        <div class="testimonial-role">بلاگر و اینفلوئنسر</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" id="faq">
+        <div class="section-header reveal">
+            <div class="section-tag">
+                <i class="fas fa-question-circle"></i>
+                سوالات متداول
+            </div>
+            <h2>سوالات <span class="gradient-text">پرتکرار</span></h2>
+            <p>پاسخ سوالات رایج درباره خدمات و تعرفه‌ها</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item reveal">
+                <div class="faq-question">
+                    <span>آیا امکان تغییر پلن وجود دارد؟</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>بله! شما می‌توانید در هر زمان پلن خود را ارتقا یا تنزل دهید. تفاوت هزینه به صورت متناسب محاسبه می‌شود.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">
+                    <span>آیا دوره آزمایشی رایگان دارید؟</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>بله، ۷ روز استفاده رایگان از تمام امکانات پلن نقره‌ای برای کاربران جدید فعال است. بدون نیاز به کارت بانکی.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">
+                    <span>اتوماسیون دایرکت چگونه کار می‌کند؟</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>با تنظیم قوانین و کلمات کلیدی، سیستم به صورت خودکار به دایرکت‌ها پاسخ می‌دهد. می‌توانید پاسخ‌های چندمرحله‌ای و شخصی‌سازی شده ایجاد کنید.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">
+                    <span>آیا پشتیبانی ۲۴ ساعته دارید؟</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>بله، تیم پشتیبانی ما ۲۴ ساعته و ۷ روز هفته از طریق تلفن، واتساپ و تیکت در خدمت شماست.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">
+                    <span>تولید محتوا با AI چگونه است؟</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>در پلن طلایی، هوش مصنوعی بر اساس niche و سبک برند شما، محتوای متنی و ایده‌های بصری تولید می‌کند که قابل ویرایش و انتشار مستقیم است.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-box reveal">
+            <h2>آماده <span class="gradient-text">رشد</span> کسب‌وکارتان هستید؟</h2>
+            <p>همین حالا با مشاوران ما تماس بگیرید و بهترین پلن را انتخاب کنید</p>
+            <div class="cta-buttons">
+                <a href="#pricing" class="btn-primary">
+                    <i class="fas fa-rocket"></i>
+                    شروع رایگان ۷ روزه
+                </a>
+                <a href="tel:09991698886" class="btn-secondary">
+                    <i class="fas fa-phone-alt"></i>
+                    تماس با مشاور
+                </a>
+            </div>
+            <div class="cta-phone">
+                <i class="fas fa-phone-alt"></i>
+                09991698886
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">Z</div>
+                        <div class="logo-text">
+                            <span class="en">ZAAD MEDIA</span>
+                            <span class="fa">ADS AGENCY</span>
+                        </div>
+                    </a>
+                    <p>
+                        آژانس تبلیغاتی زاد مدیا، ارائه‌دهنده راهکارهای هوشمند مدیریت و رشد پیج‌های اینستاگرام با اتوماسیون پیشرفته و تولید محتوای AI.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>دسترسی سریع</h4>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-chevron-left" style="font-size:10px"></i> خانه</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-left" style="font-size:10px"></i> خدمات</a></li>
+                        <li><a href="#pricing"><i class="fas fa-chevron-left" style="font-size:10px"></i> تعرفه‌ها</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-chevron-left" style="font-size:10px"></i> نظرات</a></li>
+                        <li><a href="#faq"><i class="fas fa-chevron-left" style="font-size:10px"></i> سوالات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>خدمات</h4>
+                    <ul>
+                        <li><a href="#">اتوماسیون دایرکت</a></li>
+                        <li><a href="#">تولید محتوا AI</a></li>
+                        <li><a href="#">مدیریت پیج</a></li>
+                        <li><a href="#">کمپین تبلیغاتی</a></li>
+                        <li><a href="#">مشاوره تخصصی</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>تماس با ما</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span style="direction:ltr">09991698886</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@zaadmedia.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>تهران، ایران</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>پشتیبانی ۲۴/۷</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ۲۰۲۶ ZAAD MEDIA ADS AGENCY. تمامی حقوق محفوظ است.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">قوانین و مقررات</a>
+                    <a href="#">حریم خصوصی</a>
+                    <a href="#">شرایط استفاده</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Floating Contact -->
+    <div class="float-contact">
+        <a href="tel:09991698886" class="float-btn phone-float" title="تماس تلفنی">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    </div>
+
+    <script>
+        // ===== LOADER =====
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 800);
+        });
+
+        // ===== PARTICLES =====
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 8 + 's';
+            particle.style.animationDuration = (6 + Math.random() * 6) + 's';
+            particle.style.width = (2 + Math.random() * 3) + 'px';
+            particle.style.height = particle.style.width;
+            particlesContainer.appendChild(particle);
+        }
+
+        // ===== HEADER SCROLL =====
+        const header = document.getElementById('header');
+        const scrollTop = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            if (window.scrollY > 400) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        scrollTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== MOBILE NAV =====
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mainNav = document.getElementById('mainNav');
+        const navClose = document.getElementById('navClose');
+
+        mobileToggle.addEventListener('click', () => {
+            mainNav.classList.add('mobile-open');
+            navClose.style.display = 'block';
+        });
+
+        navClose.addEventListener('click', () => {
+            mainNav.classList.remove('mobile-open');
+            navClose.style.display = 'none';
+        });
+
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('mobile-open');
+                navClose.style.display = 'none';
+            });
+        });
+
+        // ===== ACTIVE NAV LINK =====
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 200;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // ===== REVEAL ON SCROLL =====
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // ===== COUNTER ANIMATION =====
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.dataset.target);
+                    let current = 0;
+                    const increment = target / 60;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            counter.textContent = target;
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = Math.floor(current);
+                        }
+                    }, 30);
+                    counterObserver.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(c => counterObserver.observe(c));
+
+        // ===== PRICING TOGGLE =====
+        const pricingToggle = document.getElementById('pricingToggle');
+        const monthlyLabel = document.getElementById('monthlyLabel');
+        const yearlyLabel = document.getElementById('yearlyLabel');
+        let isYearly = false;
+
+        pricingToggle.addEventListener('click', () => {
+            isYearly = !isYearly;
+            pricingToggle.classList.toggle('active');
+            monthlyLabel.classList.toggle('active');
+            yearlyLabel.classList.toggle('active');
+
+            document.querySelectorAll('.price-ticker').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(10px)';
+                setTimeout(() => {
+                    el.textContent = isYearly ? el.dataset.yearly : el.dataset.monthly;
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 300);
+            });
+
+            document.querySelectorAll('.yearly-text').forEach(el => {
+                el.style.display = isYearly ? 'inline' : 'none';
+            });
+        });
+
+        // ===== FAQ ACCORDION =====
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ===== TILT EFFECT ON CARDS =====
+        document.querySelectorAll('.pricing-card, .service-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+    </script>
+</body>
+</html>
